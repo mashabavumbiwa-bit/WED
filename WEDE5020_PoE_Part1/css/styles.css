@@ -1,0 +1,460 @@
+/* Joss Sweet Crumbs Bakery - WEDE5020 project */
+:root{
+  --cream:#fffaf3; --paper:#ffffff; --ink:#2e211c; --muted:#75645b;
+  --brown:#6b4030; --brown-dark:#45281e; --peach:#f4d2b8; --line:#eadbd0;
+  --shadow:0 12px 35px rgba(69,40,30,.10); --radius:18px;
+}
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;font-family:
+  Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);
+  line-height:1.65
+}
+
+img{
+  max-width:100%;
+  display:block
+}
+
+a{
+  color:var(--brown);
+  font-weight:700
+}
+.site-header{
+  position:sticky;
+  top:0;z-index:20;
+  background:rgba(255,250,243,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 5%;
+  gap:20px
+}
+
+.brand{
+  display:flex;align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:1.05rem
+}
+
+.brand img{
+  width:48px;
+  height:48px
+}
+
+.main-nav{
+  display:flex;
+  gap:6px;
+  align-items:center
+}
+
+.main-nav a{
+  padding:10px 12px;
+  text-decoration:none;
+  border-radius:10px;
+  color:var(--ink)
+}
+
+.main-nav a:hover,.main-nav a.active{
+  background:var(--peach);
+  color:var(--brown-dark)
+}
+
+.menu-toggle{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:1.6rem;cursor:pointer
+}
+
+.hero{
+  min-height:72vh;display:grid;place-items:center;padding:70px 7%;
+  background:linear-gradient(120deg,rgba(69,40,30,.88),rgba(107,64,48,.72)),url("../images/hero-bakery.svg") center/cover
+}
+
+.hero-content{
+  max-width:760px;
+  color:#fff
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;
+  margin:.15em 0 .3em
+}
+
+.hero p:not(.eyebrow){
+  font-size:1.15rem;max-width:650px
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.15em;font-size:.78rem;
+  font-weight:800;
+  color:var(--brown);
+  margin:0 0 8px
+}
+
+.hero .eyebrow,.page-banner .eyebrow{
+  color:#f8dfcc
+}
+
+.button-row{
+  display:flex;gap:12px;
+  flex-wrap:wrap;margin-top:25px
+}
+
+.btn{
+  display:inline-block;
+  border:2px solid var(--brown);
+  background:var(--brown);
+  color:#fff;
+  padding:11px 18px;border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  cursor:pointer
+}
+
+.btn:hover {
+  background: var(--brown-dark);
+  border-color: var(--brown-dark);
+}
+
+.btn-light {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.section {
+  padding: 75px 7%;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.section.soft {
+  max-width: none;
+  background: #f7eadf;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0.2em 0 0.45em;
+}
+
+.cards {
+  display: grid;
+  gap: 22px;
+}
+
+.cards.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card,
+.form-card {
+  background: var(--paper);
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin-top: 8px;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.rounded-img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.info-list p {
+  margin: 0 0 18px;
+}
+
+.page-banner {
+  padding: 80px 7%;
+  background: linear-gradient(120deg, var(--brown-dark), var(--brown));
+  color: #fff;
+}
+
+.page-banner h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin: 0.1em 0;
+}
+
+.page-banner p:not(.eyebrow) {
+  max-width: 700px;
+}
+
+.profile {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--peach);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--brown);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.menu-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.menu-item h3 {
+  margin: 0;
+}
+
+.menu-item p {
+  margin: 0.25em 0 0;
+  color: var(--muted);
+}
+
+.menu-item strong {
+  white-space: nowrap;
+  color: var(--brown);
+}
+
+.notice {
+  margin-top: 25px;
+  padding: 15px 18px;
+  background: #fff4e9;
+  border-left: 4px solid var(--brown);
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-grid figcaption {
+  padding: 14px 17px;
+  font-weight: 800;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.map {
+  width: 100%;
+  height: 330px;
+  border: 0;
+  border-radius: var(--radius);
+  margin-top: 20px;
+}
+
+.form-card form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #d8c5b8;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  color: var(--ink);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #f0cdb7;
+  border-color: var(--brown);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.checkbox input {
+  width: auto;
+  margin-top: 5px;
+}
+
+.form-message {
+  font-weight: 800;
+  min-height: 1.5em;
+}
+
+.site-footer {
+  padding: 30px 7%;
+  background: var(--brown-dark);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 73px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 12px 5%;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .cards.three,
+  .gallery-grid,
+  .split,
+  .contact-layout,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 65vh;
+  }
+
+  .section {
+    padding: 55px 6%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    display: block;
+  }
+
+  .site-footer p + p {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand span {
+    font-size: 0.9rem;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .page-banner {
+    padding: 60px 6%;
+  }
+
+  .card,
+  .form-card {
+    padding: 22px;
+  }
+}
